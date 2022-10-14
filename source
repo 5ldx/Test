@@ -1,0 +1,57 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Printer X | Made by 5ldx#6717", "Synapse")
+
+
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+
+local Misc = Window:NewTab("Misc")
+local MiscSection = Misc:NewSection("Misc")
+
+local Info = Window:NewTab("Info")
+local InfoSection = Info:NewSection("Info")
+
+
+MainSection:NewToggle("Print WR", "Hold SHIFT and move ur mouse to strafe", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+    end
+end)
+
+MainSection:NewToggle("Autostrafe", "Autostrafe", function(state)
+    if state then
+local ToggleGuis = true
+    else
+        print("Toggle Off")
+    end
+end)
+
+MainSection:NewToggle("Autostrafe HSW", "autostrafe HSW", function(state)
+    if state then
+local ToggleGuis = true
+    else
+        print("Toggle Off")
+    end
+end)
+
+MainSection:NewLabel("Print % changable")
+
+
+MainSection:NewKeybind("Auto ESP track people", "ESP players PB ", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+MainSection:NewDropdown("ESP track A HSW AO", "Autohop wr esp track", {"Autohop ESP", "HSW ESP", "AO ESP"}, function(currentOption)
+    print(currentOption)
+end)
+
+ MainSection:NewSlider("ESP Styles", "SliderInfo", 50, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+MiscSection:NewSlider("Ln 49", "Col 33", 50, 0, function(s) -- 500 (MaxValue) 0 | (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.Walkspeed = s
+end)
